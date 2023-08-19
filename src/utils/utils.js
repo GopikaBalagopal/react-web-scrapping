@@ -1,8 +1,9 @@
 import axios from "axios";
 
+const url = "https://node-web-scrapping.onrender.com"; //"http://localhost:6005";
 export const scrapProducts = async (searchTxt) => {
   axios
-    .post("http://localhost:4000/scrap-products", {
+    .post(`${url}/scrap-products`, {
       searchItem: searchTxt,
     })
     .then((res) => {
@@ -14,5 +15,5 @@ export const scrapProducts = async (searchTxt) => {
 };
 
 export const getProducts = async (value) => {
-  return axios.get(`http://localhost:4000/products/${value}`);
+  return axios.get(`${url}/products/${value}`);
 };
